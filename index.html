@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulir Perhitungan Produk</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.23.0/docxtemplater.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -76,6 +70,12 @@
         button:hover {
             background-color: #218838;
         }
+
+        @media print {
+      button {
+        display: none; /* Sembunyikan tombol saat dicetak */
+      }
+    }
     
     </style>
 </head>
@@ -276,7 +276,7 @@
             </tr>
         </tbody>
     </table>
-    <button type="button" onclick="downloadTableAsPDF()">Download PDF</button>
+    <button onclick="window.print()">Download PDF</button>
 </form>
 
 <script>
